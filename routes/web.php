@@ -5,6 +5,17 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\FileUploadController;
+use App\Http\Controllers\AdminController; 
+
+Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboard');
+
+Route::get('/login', function () {
+    return inertia('Auth/Login'); 
+})->name('login');
+
+Route::get('/register', function () {
+    return inertia('Auth/Register'); 
+})->name('register');
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
