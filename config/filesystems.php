@@ -63,10 +63,10 @@ return [
         'gcs' => [
             'driver' => 'gcs',
             'project_id' => env('GOOGLE_CLOUD_PROJECT_ID'),
-            'key_file' => env('GOOGLE_CLOUD_KEY_FILE_PATH'),
+            'key_file' => base_path(env('GOOGLE_CLOUD_KEY_FILE_PATH')),
             'bucket' => env('GOOGLE_CLOUD_STORAGE_BUCKET'),
             'visibility' => 'public',
-    ],
+        ],
 
     ],
 

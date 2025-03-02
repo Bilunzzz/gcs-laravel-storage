@@ -26,9 +26,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    
+    Route::get('/file-storage', [FileUploadController::class, 'index'])->name('file.storage');
+    Route::post('/file-storage/upload', [FileUploadController::class, 'upload'])->name('upload.file');
 });
-
-Route::get('/upload', [FileUploadController::class, 'index']);
-Route::post('/upload', [FileUploadController::class, 'upload'])->name('upload.file');
 
 require __DIR__.'/auth.php';
